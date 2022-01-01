@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Pushster&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Pushster', cursive;
+}
+:root{
+    --clr-one: #ffb703;
+    --clr-two: #219ebc;
+}
+body{
+    line-height: 1.5;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80') no-repeat fixed center center/cover;
+}
+
+.drums{
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    transition: all 1s linear;
+}
+.drum{
+    position: relative;
+    border-radius: 1rem;
+}
+.drum:nth-of-type(1){
+    animation: change-color 3s linear infinite alternate;
+}
+.drum:nth-of-type(2){
+    animation: change-color 2s linear infinite alternate;
+}
+.drum:nth-of-type(3){
+    animation: change-color 4s linear infinite alternate;
+}
+.drum:nth-of-type(4){
+    animation: change-color 3s linear infinite alternate;
+}
+.drum:nth-of-type(5){
+    animation: change-color 1s linear infinite alternate;
+}
+.drum:nth-of-type(6){
+    animation: change-color 5s linear infinite alternate;
+}
+
+.pad{
+    background-color: transparent;
+    outline: none;
+    font-size: 1.5rem;
+    border: 10px groove rgb(118, 132, 141);
+    cursor: pointer;
+    height: 150px;
+    width: 150px;
+    border-radius: 1rem;
+
+    /* animation: change-color 3s linear infinite alternate; */
+}
+@keyframes change-color {
+    0%{background-color: #fffa6571;}
+    10%{background-color: #ff383871;}
+    20%{background-color: #67e6dc71;}
+    30%{background-color: #ffb8b871;}
+    40%{background-color: #32ff7e71;}
+    50%{background-color: #a4b0be71;}
+    60%{background-color: #ff7f5071;}
+    70%{background-color: #9AECDB71;}
+    80%{background-color: #EAB54371;}
+    90%{background-color: #1dd1a171;}
+    100%{background-color: #ff9ff371;}
+
+}
+
+.key{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    text-transform: lowercase;
+    font-weight: 900;
+}
+
+.pad:active, .pad:focus{
+    font-size: 1.1rem;
+    filter: drop-shadow(5px 5px 15px rgba(0, 0, 0, 0.8));
+    color: whitesmoke;
+}
+
+
+@media only screen and (max-width: 500px){
+    .drums{
+        padding: 2rem;
+    }
+    .pad{
+        height: 100px;
+        width: 100px;
+        font-size: 1.4rem;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .drums{
+        padding: 0.5rem;
+    }
+    .pad{
+        height: 100px;
+        width: 100px;
+        font-size: 1.2rem;
+    }
+}
